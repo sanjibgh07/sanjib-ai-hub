@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sanjib AI Hub — models, free AI APIs, routing and local AI services.">
+  <meta name="theme-color" content="#000000">
+  <title>Sanjib AI Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <canvas id="field" aria-hidden="true"></canvas>
+
+  <header class="nav">
+    <a class="brand" href="#top"><span class="brand-mark">✦</span> SANJIB AI</a>
+    <nav>
+      <a href="#models">Models</a>
+      <a href="#providers">Providers</a>
+      <a href="#local">Local</a>
+      <a href="#architecture">Architecture</a>
+    </nav>
+    <a class="nav-cta" href="https://github.com/sanjibgh07/sanjib-ai-hub" target="_blank" rel="noreferrer">GitHub ↗</a>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div class="eyebrow"><span class="dot"></span> AI RESOURCE CONTROL DESK</div>
+      <h1>Find the right<br><em>intelligence.</em></h1>
+      <p class="hero-copy">One clean control surface for models, free API resources, provider routing and your local AI stack.</p>
+      <div class="hero-actions">
+        <a class="primary" href="#models">Explore models <span>→</span></a>
+        <a class="secondary" href="#local">Check local services</a>
+      </div>
+      <div class="hero-meta"><span>PUBLIC REGISTRY</span><i></i><span>NO SECRETS STORED</span><i></i><span>STATIC FRONTEND</span></div>
+    </section>
+
+    <section class="section wrap" id="models">
+      <div class="section-head"><div><span class="kicker">01 / MODEL DESK</span><h2>Models worth knowing.</h2></div><span class="count" id="modelCount">0 indexed</span></div>
+      <div class="toolbar"><div class="search"><span>⌕</span><input id="modelSearch" placeholder="Search model, provider, capability..." autocomplete="off"></div><div class="filters" id="modelFilters"><button class="active" data-filter="all">All</button><button data-filter="reasoning">Reasoning</button><button data-filter="coding">Coding</button><button data-filter="vision">Vision</button><button data-filter="free">Free access</button></div></div>
+      <div class="cards" id="modelGrid"></div>
+    </section>
+
+    <section class="section wrap" id="providers">
+      <div class="section-head"><div><span class="kicker">02 / API DESK</span><h2>Free API resources.</h2></div><span class="muted">Limits change — verify at source.</span></div>
+      <div class="provider-grid" id="providerGrid"></div>
+    </section>
+
+    <section class="section wrap" id="local">
+      <div class="section-head"><div><span class="kicker">03 / LOCAL DESK</span><h2>Your machines, under control.</h2></div><button class="outline" id="bridgeCheck">Check bridge</button></div>
+      <div class="local-banner"><div><span class="status-dot" id="bridgeDot"></span><strong id="bridgeStatus">Local bridge inactive</strong><p id="bridgeMessage">The browser cannot launch local programs directly. Connect the authenticated local bridge to enable real activation.</p></div><span class="badge" id="bridgeBadge">OFFLINE</span></div>
+      <div class="local-grid" id="localGrid"></div>
+      <p class="security-note"><b>Security boundary.</b> Activation requests stay local. Do not expose the bridge port to the public internet. The website never contains your API keys or machine credentials.</p>
+    </section>
+
+    <section class="section architecture wrap" id="architecture">
+      <div class="section-head"><div><span class="kicker">04 / ROUTING</span><h2>The intended stack.</h2></div></div>
+      <div class="flow">
+        <div class="node"><small>DISCOVER</small><strong>Model Registry</strong><span>Models · providers · access</span></div><div class="arrow">→</div>
+        <div class="node accent"><small>ROUTE</small><strong>OmniRoute</strong><span>Fallback · quota · health</span></div><div class="arrow">→</div>
+        <div class="node"><small>EXECUTE</small><strong>Cloud + Local</strong><span>APIs · Ollama · agents</span></div><div class="arrow">→</div>
+        <div class="node"><small>CONTROL</small><strong>OmniRoot / OpenCode / OpenCore</strong><span>Local service layer</span></div>
+      </div>
+      <div class="architecture-note"><span>DESIGN RULE</span><p>Keep the public registry separate from the local execution plane. Cloud providers can be discovered and routed; local programs are activated only through an authenticated companion service.</p></div>
+    </section>
+  </main>
+
+  <footer class="footer wrap"><div><span class="brand-mark">✦</span> SANJIB AI HUB</div><div>Built as a public, source-traceable AI resource desk.</div><div><a href="https://github.com/sanjibgh07/sanjib-ai-hub" target="_blank" rel="noreferrer">Repository ↗</a></div></footer>
+  <script src="app.js"></script>
+</body>
+</html>
